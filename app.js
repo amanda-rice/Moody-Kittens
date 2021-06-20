@@ -13,7 +13,6 @@ let kittens = [];
  * Then reset the form
  */
 loadKittens()
-drawKittens()
 
 function addKitten(event) {
   event.preventDefault()
@@ -92,7 +91,6 @@ function drawKittens() {
     <div id="mood-controls" class="space-around mt-2">
       <button class="pet-button btn-dark" id="${kitten.id}PetButton" onclick="pet('${kitten.id}')">Pet</button>
       <button class="catnip-button"id="${kitten.id}CatnipButton" onclick="catnip('${kitten.id}')">Catnip</button>
-      <button class="btn-cancel"id="${kitten.id}DeleteButton" onclick="deleteKitten('${kitten.id}')">Delete</button>
     </div>
   </div>
     `
@@ -126,14 +124,9 @@ function drawKittens() {
 
 }
 
-function deleteKitten(id) {
-  let index = kittens.findIndex(kitten => kitten.id == id)
-  //if can't find index, returns index of -1
-  if (index == -1) {
-    throw new Error("Contact ID invalid")
-  }
-  kittens.splice(index, 1)
-  saveKittens()
+function deleteKittens() {
+  kittens = [];
+  getStarted();
 
 }
 /**
