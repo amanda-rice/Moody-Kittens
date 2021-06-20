@@ -73,26 +73,26 @@ function drawKittens() {
   let template = ""
   kittens.forEach(kitten => {
     template += `
-    <div class="kitten-container card mt-1 mb-1" id="${kitten.name}Card">
-    <div class = "kitten" id = "${kitten.name}PicDiv">
-      <img src=${kitten.picture} id = "${kitten.name}Pic">
+    <div class="kitten-container card mt-1 mb-1" id="${kitten.id}Card">
+    <div class = "kitten" id = "${kitten.id}PicDiv">
+      <img src=${kitten.picture} id = "${kitten.id}Pic">
     </div>
     <div>
       <span>Kitten Name: </span>
-      <span id="${kitten.name}Name">${kitten.name}</span>
+      <span id="${kitten.id}Name">${kitten.name}</span>
     </div>
     <div>
       <span> Mood: </span>
-      <span id="${kitten.name}Mood">${kitten.mood}</span>
+      <span id="${kitten.id}Mood">${kitten.mood}</span>
     </div>
     <div>
       <span> Affection: </span>
-      <span id="${kitten.name}Affection">${kitten.affection}</span>
+      <span id="${kitten.id}Affection">${kitten.affection}</span>
     </div>
     <div id="mood-controls" class="space-around mt-2">
-      <button class="pet-button btn-dark" id="${kitten.name}PetButton" onclick="pet('${kitten.id}')">Pet</button>
-      <button class="catnip-button"id="${kitten.name}CatnipButton" onclick="catnip('${kitten.id}')">Catnip</button>
-      <button class="btn-cancel"id="${kitten.name}DeleteButton" onclick="deleteKitten('${kitten.id}')">Delete</button>
+      <button class="pet-button btn-dark" id="${kitten.id}PetButton" onclick="pet('${kitten.id}')">Pet</button>
+      <button class="catnip-button"id="${kitten.id}CatnipButton" onclick="catnip('${kitten.id}')">Catnip</button>
+      <button class="btn-cancel"id="${kitten.id}DeleteButton" onclick="deleteKitten('${kitten.id}')">Delete</button>
     </div>
   </div>
     `
@@ -101,26 +101,26 @@ function drawKittens() {
 
   kittens.forEach(kitten => {
     if (kitten.mood == "Gone") {
-      document.getElementById(kitten.name + "PicDiv").removeAttribute("class")
-      document.getElementById(kitten.name + "PetButton").classList.add("hidden")
-      document.getElementById(kitten.name + "CatnipButton").classList.add("hidden")
-      document.getElementById(kitten.name + "PicDiv").classList.add("kitten")
-      document.getElementById(kitten.name + "PicDiv").classList.add("gone")
+      document.getElementById(kitten.id + "PicDiv").removeAttribute("class")
+      document.getElementById(kitten.id + "PetButton").classList.add("hidden")
+      document.getElementById(kitten.id + "CatnipButton").classList.add("hidden")
+      document.getElementById(kitten.id + "PicDiv").classList.add("kitten")
+      document.getElementById(kitten.id + "PicDiv").classList.add("gone")
     }
     else if (kitten.mood == "Happy") {
-      document.getElementById(kitten.name + "PicDiv").removeAttribute("class")
-      document.getElementById(kitten.name + "PicDiv").classList.add("kitten")
-      document.getElementById(kitten.name + "PicDiv").classList.add("happy")
+      document.getElementById(kitten.id + "PicDiv").removeAttribute("class")
+      document.getElementById(kitten.id + "PicDiv").classList.add("kitten")
+      document.getElementById(kitten.id + "PicDiv").classList.add("happy")
     }
     else if (kitten.mood == "Tolerant") {
-      document.getElementById(kitten.name + "PicDiv").removeAttribute("class")
-      document.getElementById(kitten.name + "PicDiv").classList.add("kitten")
-      document.getElementById(kitten.name + "PicDiv").classList.add("tolerant")
+      document.getElementById(kitten.id + "PicDiv").removeAttribute("class")
+      document.getElementById(kitten.id + "PicDiv").classList.add("kitten")
+      document.getElementById(kitten.id + "PicDiv").classList.add("tolerant")
     }
     else if (kitten.mood == "Angry") {
-      document.getElementById(kitten.name + "PicDiv").removeAttribute("class")
-      document.getElementById(kitten.name + "PicDiv").classList.add("kitten")
-      document.getElementById(kitten.name + "PicDiv").classList.add("angry")
+      document.getElementById(kitten.id + "PicDiv").removeAttribute("class")
+      document.getElementById(kitten.id + "PicDiv").classList.add("kitten")
+      document.getElementById(kitten.id + "PicDiv").classList.add("angry")
     }
   })
 
