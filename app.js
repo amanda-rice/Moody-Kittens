@@ -104,6 +104,8 @@ function drawKittens() {
       document.getElementById(kitten.id + "CatnipButton").classList.add("hidden")
       document.getElementById(kitten.id + "PicDiv").classList.add("kitten")
       document.getElementById(kitten.id + "PicDiv").classList.add("gone")
+      document.getElementById(kitten.id + "Card").classList.add("text-danger")
+      document.getElementById(kitten.id + "Card").classList.add("bg-dark")
     }
     else if (kitten.mood == "Happy") {
       document.getElementById(kitten.id + "PicDiv").removeAttribute("class")
